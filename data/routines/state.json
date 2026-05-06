@@ -1,17 +1,17 @@
 {
-    "current_member_id": null,
-    "session": {
-        "started_at": null,
-        "ack_start": null,
-        "ack_start_at": null,
-        "ack_done": null,
-        "ack_done_at": null,
-        "pomodoro_minutes": 25,
-        "break_minutes": 5,
-        "round": 0,
-        "escalation_stage": 0,
-        "last_nudge_at": null,
-        "last_notify_at": null
-    },
-    "mode": "idle"
+  "mode": "idle",
+  "current_member_id": null,
+  "session": {
+    "started_at": null,
+    "ack_start": null,
+    "ack_start_at": null,
+    "ack_done": null,
+    "ack_done_at": null,
+    "pomodoro_minutes": 25,
+    "break_minutes": 5,
+    "round": 0,
+    "escalation_stage": 0,
+    "last_nudge_at": null,
+    "last_notify_at": null
+  }
 }
