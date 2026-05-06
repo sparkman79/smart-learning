@@ -6,6 +6,9 @@ __pycache__/
 # Logs
 *.log
 
+# Secrets - NEVER commit real credentials
+feishu/config.json
+
 # Test workspace
 tests/.test_workspace/
 tests/test_report_*.json

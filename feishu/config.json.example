@@ -1,0 +1,8 @@
+{
+  "app_id": "cli_a94xxxxxxxxxxxx",
+  "app_secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+  "verify_token": "verify_xxxxxxxxxxxx",
+  "webhook_path": "/feishu/webhook",
+  "channel": "feishu",
+  "status": "ready"
+}

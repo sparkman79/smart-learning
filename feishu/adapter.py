@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 飞书 Bot 适配器
-将飞书消息转换为 OpenClaw 内部格式，并路由到对应 Skill
+将飞书消息转换为系统内部格式，并路由到对应 Skill
 """
 
 import json
@@ -485,7 +485,8 @@ def handle_study_end(member, args, config, chat_id):
 def handle_daily_report(member, args, config, chat_id):
     """处理日报查看"""
     report_dir = os.path.join(STATE_DIR.replace('routines', 'reports'), 'daily')
-    today = '2026-05-06'  # TODO: 动态获取
+    from datetime import datetime
+    today = datetime.now().strftime('%Y-%m-%d')
     report_file = os.path.join(report_dir, f'{today}_{member["member_id"]}_daily.md')
     
     if os.path.exists(report_file):

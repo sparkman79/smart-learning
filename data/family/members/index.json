@@ -1,28 +1,31 @@
 {
   "family_id": "FAMILY_001",
-  "members": [
-    {
-      "openid": "openid_admin_1",
-      "member_id": "admin_1",
+  "members": {
+    "admin_1": {
+      "name": "家长管理员",
       "role": "admin",
-      "display_name": "家长管理员",
+      "open_ids": {
+        "feishu": "YOUR_FEISHU_OPEN_ID"
+      },
       "linked_children": ["kid_1", "kid_2"],
       "created_at": "2026-05-05"
     },
-    {
-      "openid": "openid_parent_1",
-      "member_id": "parent_1",
+    "parent_1": {
+      "name": "家长A",
       "role": "parent",
-      "display_name": "家长A",
+      "open_ids": {
+        "feishu": "YOUR_FEISHU_OPEN_ID"
+      },
       "linked_children": ["kid_1"],
       "created_at": "2026-05-05"
     },
-    {
-      "openid": "openid_kid_1",
-      "member_id": "kid_1",
+    "kid_1": {
+      "name": "小明",
       "role": "kid",
-      "display_name": "小明",
+      "open_ids": {
+        "feishu": "YOUR_FEISHU_OPEN_ID"
+      },
       "created_at": "2026-05-05"
     }
-  ]
+  }
 }

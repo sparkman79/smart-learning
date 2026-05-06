@@ -1,63 +1,70 @@
 # 智能学习系统（Plus 版）
 
-> 基于 OpenClaw + 微信群/飞书 + Home Assistant 的家庭全科辅导系统
+> 基于飞书机器人 + OpenClaw 的家庭全科辅导系统
 
-## 系统架构
+## 系统架构（3 层）
 
 ```
-策略层（家长组合计划）
+策略层（家长组合计划 / 四旋钮调参）
     ↓
-执行层（智能家居联动）
+执行层（作业拆解 + 学习模式 + 升级提醒）
     ↓
-内容层（作业拆解 + 双视图）
-    ↓
-数据沉淀（日报 + 周报 + 趋势）
+数据沉淀（日报 + 周报 + 趋势回看）
 ```
+
+### 策略层
+- 四套计划模板：轻量 / 标准 / 冲刺 / 共读
+- 四旋钮：番茄钟时长、休息时长、升级强度、夜间模式
+- 家长专属权限，孩子不可修改
+
+### 执行层
+- 作业输入 → 自动拆解为 5-20 分钟颗粒任务
+- 双视图：孩子版（简洁）+ 家长版（含检查点）
+- 状态机驱动：idle → learning → break → completed
+- 阶段化升级提醒：未确认 → 轻提醒 → 严肃提醒 → 家长通知
+
+### 数据沉淀
+- 日报：每日自动生成，含任务完成率 + 评分
+- 周报：每周汇总，对比上周涨跌
+- 趋势：trends.csv 沉淀，支持多周回看
 
 ## 快速开始
 
-### 1. 配置环境变量
+### 1. 配置飞书机器人
 
+复制配置模板并填入真实值：
 ```bash
-# Home Assistant
-HA_URL=http://<ha-ip>:8123
-HA_TOKEN=<long-lived-token>
-
-# LLM（可选，增强作业理解）
-LLM_API_KEY=<your-key>
-LLM_MODEL=<model-name>
+cp feishu/config.json.example feishu/config.json
+# 编辑 config.json，填入 app_id / app_secret / verify_token
 ```
 
 ### 2. 配置成员索引
 
-编辑 `data/family/members/index.json`，填入实际 openid：
+编辑 `data/family/members/index.json`，填入实际飞书 open_id：
 
 ```json
 {
   "family_id": "FAMILY_001",
-  "members": [
-    {
-      "openid": "你的微信openid",
-      "member_id": "kid_1",
+  "members": {
+    "kid_1": {
+      "name": "小明",
       "role": "kid",
-      "display_name": "孩子昵称",
-      "created_at": "2026-05-05"
+      "open_ids": { "feishu": "ou_xxxxxxxxxxxx" }
     }
-  ]
+  }
 }
 ```
 
-### 3. 配置 Home Assistant
+### 3. 启动飞书 Webhook 服务
 
-参考 `homeassistant/config.yaml` 配置：
-- Timer: `timer.study_pomodoro`
-- Scripts: `study_start`, `study_break`, `study_end`, `study_soft_nudge`, `study_night_silent_nudge`
-- Automation: timer 完成 → 休息 → 继续
+```bash
+pip install -r requirements.txt
+python feishu/adapter.py
+```
 
-### 4. 配置 OpenClaw 定时任务
+### 4. 配置定时任务
 
-在 `cron/jobs.json` 中添加：
-
+在 `cron/jobs.json` 中添加升级检查任务：
 ```json
 {
   "id": "study_escalation",
@@ -85,14 +92,28 @@ LLM_MODEL=<model-name>
 ## 目录结构
 
 ```
-smart_learning/
-├── skills/              # OpenClaw Skills
+smart-learning/
+├── feishu/              # 飞书 Bot 适配器
+│   ├── adapter.py       # 消息路由 + 指令处理
+│   ├── config.json      # 飞书配置（不提交）
+│   └── config.json.example
+├── skills/              # OpenClaw Skills（8 个）
+│   ├── homework-intake/ # 作业拆解 + 双视图
+│   ├── study-mode/      # 学习模式管理
+│   ├── study-ack/       # 确认机制
+│   ├── study-escalation/# 升级提醒
+│   ├── plan-builder/    # 计划模板管理
+│   ├── member-registry/ # 成员注册
+│   ├── daily-report/    # 日报生成
+│   └── weekly-report/   # 周报 + 趋势
 ├── data/
 │   ├── family/          # 成员索引
-│   ├── homework/        # 作业数据
+│   ├── homework/        # 作业数据（inbox → parsed）
 │   ├── routines/        # 状态机 + 策略
 │   └── reports/         # 日报 + 周报 + 趋势
-└── homeassistant/       # HA 配置（待创建）
+├── tests/               # 集成测试 + 端到端测试
+├── archive_20260505/    # 历史参考文档
+└── requirements.txt     # Python 依赖
 ```
 
 ## 四套计划模板
@@ -104,18 +125,11 @@ smart_learning/
 | 冲刺 | 30min | 3/6min | 考试前 |
 | 共读 | 20min | 关闭 | 周末亲子 |
 
-## 实施阶段
-
-- **Phase 1**：基础跑通（目录 + index.json + 核心 Skills）
-- **Phase 2**：HA 设备配置（Timer + Scripts + Automation）
-- **Phase 3**：定时任务 + 升级机制
-- **Phase 4**：数据沉淀（日报/周报）
-- **Phase 5**：策略可配置（模板 + 四旋钮）
-
 ## 注意事项
 
-1. 所有识别只认 openid，不认昵称
+1. 所有识别只认 open_id，不认昵称
 2. 文件名必须含 member_id，多孩子不串台
 3. 权限基于 role，kid 不能改策略
-4. 只改 policies.json，不改 HA YAML
+4. 只改 policies.json，不改系统配置
 5. 升级判断顺序：mode → ack_start → elapsed → stage
+6. **config.json 包含密钥，切勿提交到 Git**
