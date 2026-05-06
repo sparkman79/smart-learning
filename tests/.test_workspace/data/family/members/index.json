@@ -1,0 +1,47 @@
+{
+  "family_id": "FAMILY_TEST",
+  "members": {
+    "kid_1": {
+      "name": "小明",
+      "role": "kid",
+      "open_ids": {
+        "feishu": "ou_test_kid_1"
+      },
+      "scheduled": [
+        "homework_intake",
+        "study_start",
+        "study_ack",
+        "study_end"
+      ]
+    },
+    "parent_1": {
+      "name": "爸爸",
+      "role": "parent",
+      "open_ids": {
+        "feishu": "ou_test_parent_1"
+      },
+      "linked_children": [
+        "kid_1"
+      ],
+      "scheduled": [
+        "homework_intake",
+        "daily_report",
+        "weekly_report",
+        "plan_switch",
+        "plan_set",
+        "trend_view"
+      ]
+    },
+    "admin_1": {
+      "name": "管理员",
+      "role": "admin",
+      "open_ids": {
+        "feishu": "ou_test_admin_1"
+      },
+      "scheduled": [
+        "member_register",
+        "member_list"
+      ]
+    }
+  }
+}

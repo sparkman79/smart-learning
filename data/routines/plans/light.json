@@ -1,0 +1,20 @@
+{
+  "plan_id": "light",
+  "name": "轻量",
+  "description": "情绪友好，先保证愿意开始。适合状态一般、先求愿意开始的场景。",
+  "policy_patch": {
+    "pomodoro_minutes": 15,
+    "break_minutes": 5,
+    "reminder_intensity": "low",
+    "escalation": {
+      "no_ack_minutes": 0,
+      "second_notice_minutes": 0,
+      "max_stage": 0
+    },
+    "night": {
+      "enabled": true,
+      "silent_speaker": true,
+      "light_only": true
+    }
+  }
+}

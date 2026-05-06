@@ -1,0 +1,7 @@
+{
+  "name": "light",
+  "policy_patch": {
+    "pomodoro_minutes": 15,
+    "break_minutes": 3
+  }
+}

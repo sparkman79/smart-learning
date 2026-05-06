@@ -1,0 +1,544 @@
+{
+    "timestamp": "2026-05-06 15:21:15",
+    "total": 89,
+    "pass": 89,
+    "fail": 0,
+    "rate": 100.0,
+    "type": "integration",
+    "results": [
+        {
+            "test": "解析 sender_open_id",
+            "status": "✅",
+            "expected": "ou_test_kid_1",
+            "actual": "ou_test_kid_1"
+        },
+        {
+            "test": "解析 chat_id",
+            "status": "✅",
+            "expected": "oc_test_group",
+            "actual": "oc_test_group"
+        },
+        {
+            "test": "解析 text",
+            "status": "✅",
+            "expected": "/开始学习",
+            "actual": "/开始学习"
+        },
+        {
+            "test": "消息类型=text",
+            "status": "✅",
+            "expected": "text",
+            "actual": "text"
+        },
+        {
+            "test": "source=feishu",
+            "status": "✅",
+            "expected": "feishu",
+            "actual": "feishu"
+        },
+        {
+            "test": "指令: /开始学习",
+            "status": "✅",
+            "expected": "study_start",
+            "actual": "study_start"
+        },
+        {
+            "test": "参数: /开始学习",
+            "status": "✅",
+            "expected": "",
+            "actual": ""
+        },
+        {
+            "test": "指令: /作业 数学",
+            "status": "✅",
+            "expected": "homework_intake",
+            "actual": "homework_intake"
+        },
+        {
+            "test": "参数: /作业 数学",
+            "status": "✅",
+            "expected": "数学",
+            "actual": "数学"
+        },
+        {
+            "test": "指令: /确认 已开始",
+            "status": "✅",
+            "expected": "study_ack",
+            "actual": "study_ack"
+        },
+        {
+            "test": "参数: /确认 已开始",
+            "status": "✅",
+            "expected": "已开始",
+            "actual": "已开始"
+        },
+        {
+            "test": "指令: /确认 已完成",
+            "status": "✅",
+            "expected": "study_ack",
+            "actual": "study_ack"
+        },
+        {
+            "test": "参数: /确认 已完成",
+            "status": "✅",
+            "expected": "已完成",
+            "actual": "已完成"
+        },
+        {
+            "test": "指令: /结束学习",
+            "status": "✅",
+            "expected": "study_end",
+            "actual": "study_end"
+        },
+        {
+            "test": "参数: /结束学习",
+            "status": "✅",
+            "expected": "",
+            "actual": ""
+        },
+        {
+            "test": "指令: /日报",
+            "status": "✅",
+            "expected": "daily_report",
+            "actual": "daily_report"
+        },
+        {
+            "test": "参数: /日报",
+            "status": "✅",
+            "expected": "",
+            "actual": ""
+        },
+        {
+            "test": "指令: /切换计划 轻量",
+            "status": "✅",
+            "expected": "plan_switch",
+            "actual": "plan_switch"
+        },
+        {
+            "test": "参数: /切换计划 轻量",
+            "status": "✅",
+            "expected": "轻量",
+            "actual": "轻量"
+        },
+        {
+            "test": "指令: /设置 节奏=15/3",
+            "status": "✅",
+            "expected": "plan_set",
+            "actual": "plan_set"
+        },
+        {
+            "test": "参数: /设置 节奏=15/3",
+            "status": "✅",
+            "expected": "节奏=15/3",
+            "actual": "节奏=15/3"
+        },
+        {
+            "test": "指令: /趋势 4",
+            "status": "✅",
+            "expected": "trend_view",
+            "actual": "trend_view"
+        },
+        {
+            "test": "参数: /趋势 4",
+            "status": "✅",
+            "expected": "4",
+            "actual": "4"
+        },
+        {
+            "test": "指令: /注册",
+            "status": "✅",
+            "expected": "member_register",
+            "actual": "member_register"
+        },
+        {
+            "test": "参数: /注册",
+            "status": "✅",
+            "expected": "",
+            "actual": ""
+        },
+        {
+            "test": "指令: /列表",
+            "status": "✅",
+            "expected": "member_list",
+            "actual": "member_list"
+        },
+        {
+            "test": "参数: /列表",
+            "status": "✅",
+            "expected": "",
+            "actual": ""
+        },
+        {
+            "test": "找到 kid_1",
+            "status": "✅",
+            "expected": "非 None",
+            "actual": "{'member_id': 'kid_1', 'role': 'kid', 'name': '小明', 'channel': 'feishu'}"
+        },
+        {
+            "test": "kid_1 role=kid",
+            "status": "✅",
+            "expected": "kid",
+            "actual": "kid"
+        },
+        {
+            "test": "kid_1 name=小明",
+            "status": "✅",
+            "expected": "小明",
+            "actual": "小明"
+        },
+        {
+            "test": "找到 parent_1",
+            "status": "✅",
+            "expected": "非 None",
+            "actual": "{'member_id': 'parent_1', 'role': 'parent', 'name': '爸爸', 'channel': 'feishu'}"
+        },
+        {
+            "test": "parent_1 role=parent",
+            "status": "✅",
+            "expected": "parent",
+            "actual": "parent"
+        },
+        {
+            "test": "未知成员返回 None",
+            "status": "✅",
+            "expected": "None",
+            "actual": "None"
+        },
+        {
+            "test": "有效签名通过",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "无效签名拒绝",
+            "status": "✅",
+            "expected": "False",
+            "actual": "False"
+        },
+        {
+            "test": "空 token 通过",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "状态=learning",
+            "status": "✅",
+            "expected": "learning",
+            "actual": "learning"
+        },
+        {
+            "test": "current_member_id=kid_1",
+            "status": "✅",
+            "expected": "kid_1",
+            "actual": "kid_1"
+        },
+        {
+            "test": "session.started_at 有值",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "now"
+        },
+        {
+            "test": "ack_start=False",
+            "status": "✅",
+            "expected": "False",
+            "actual": "False"
+        },
+        {
+            "test": "escalation_stage=0",
+            "status": "✅",
+            "expected": "0",
+            "actual": "0"
+        },
+        {
+            "test": "parent 不能开始学习",
+            "status": "✅",
+            "expected": "仅孩子",
+            "actual": "匹配"
+        },
+        {
+            "test": "确认前 ack_start=False",
+            "status": "✅",
+            "expected": "False",
+            "actual": "False"
+        },
+        {
+            "test": "确认前→后 ack_start=True",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "ack_start_at 有值",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "now"
+        },
+        {
+            "test": "escalation_stage=0",
+            "status": "✅",
+            "expected": "0",
+            "actual": "0"
+        },
+        {
+            "test": "回复含确认成功",
+            "status": "✅",
+            "expected": "✅已开始",
+            "actual": "匹配"
+        },
+        {
+            "test": "重复确认提示",
+            "status": "✅",
+            "expected": "无需重复",
+            "actual": "匹配"
+        },
+        {
+            "test": "ack_done=True",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "ack_done_at 有值",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "now"
+        },
+        {
+            "test": "模式=completed",
+            "status": "✅",
+            "expected": "completed",
+            "actual": "completed"
+        },
+        {
+            "test": "回复含完成",
+            "status": "✅",
+            "expected": "✅+完成",
+            "actual": "匹配"
+        },
+        {
+            "test": "学习开始",
+            "status": "✅",
+            "expected": "learning",
+            "actual": "learning"
+        },
+        {
+            "test": "mode 重置为 idle",
+            "status": "✅",
+            "expected": "idle",
+            "actual": "idle"
+        },
+        {
+            "test": "current_member_id 清空",
+            "status": "✅",
+            "expected": "None",
+            "actual": "None"
+        },
+        {
+            "test": "round 保留",
+            "status": "✅",
+            "expected": "1",
+            "actual": "1"
+        },
+        {
+            "test": "回复含结束",
+            "status": "✅",
+            "expected": "已结束",
+            "actual": "匹配"
+        },
+        {
+            "test": "非当前成员不能结束",
+            "status": "✅",
+            "expected": "拒绝",
+            "actual": "匹配"
+        },
+        {
+            "test": "切换回复正确",
+            "status": "✅",
+            "expected": "包含切换/轻量",
+            "actual": "匹配"
+        },
+        {
+            "test": "policies.json current_plan=light",
+            "status": "✅",
+            "expected": "light",
+            "actual": "light"
+        },
+        {
+            "test": "pomodoro=15（应用 plan policy_patch）",
+            "status": "✅",
+            "expected": "15",
+            "actual": "15"
+        },
+        {
+            "test": "kid 不能切换",
+            "status": "✅",
+            "expected": "仅家长/管理员",
+            "actual": "匹配"
+        },
+        {
+            "test": "列表含管理员",
+            "status": "✅",
+            "expected": "包含管理员",
+            "actual": "匹配"
+        },
+        {
+            "test": "列表含家长",
+            "status": "✅",
+            "expected": "包含家长",
+            "actual": "匹配"
+        },
+        {
+            "test": "列表含孩子",
+            "status": "✅",
+            "expected": "包含孩子",
+            "actual": "匹配"
+        },
+        {
+            "test": "列表含人数 3",
+            "status": "✅",
+            "expected": "含人数 3",
+            "actual": "匹配"
+        },
+        {
+            "test": "pomodoro=15",
+            "status": "✅",
+            "expected": "15",
+            "actual": "15"
+        },
+        {
+            "test": "break=3",
+            "status": "✅",
+            "expected": "3",
+            "actual": "3"
+        },
+        {
+            "test": "回复含成功",
+            "status": "✅",
+            "expected": "含✅",
+            "actual": "匹配"
+        },
+        {
+            "test": "收到作业回复",
+            "status": "✅",
+            "expected": "收到作业",
+            "actual": "匹配"
+        },
+        {
+            "test": "持久化 mode=completed",
+            "status": "✅",
+            "expected": "completed",
+            "actual": "completed"
+        },
+        {
+            "test": "持久化 current_member_id",
+            "status": "✅",
+            "expected": "kid_1",
+            "actual": "kid_1"
+        },
+        {
+            "test": "持久化 ack_done=True",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "持久化 ack_start=True",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "回写 mode=idle",
+            "status": "✅",
+            "expected": "idle",
+            "actual": "idle"
+        },
+        {
+            "test": "回写 current_member_id=None",
+            "status": "✅",
+            "expected": "None",
+            "actual": "None"
+        },
+        {
+            "test": "回写 round 保留",
+            "status": "✅",
+            "expected": "1",
+            "actual": "1"
+        },
+        {
+            "test": "学习开始",
+            "status": "✅",
+            "expected": "learning",
+            "actual": "learning"
+        },
+        {
+            "test": "escalation=0",
+            "status": "✅",
+            "expected": "0",
+            "actual": "0"
+        },
+        {
+            "test": "确认已开始",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "escalation 归零",
+            "status": "✅",
+            "expected": "0",
+            "actual": "0"
+        },
+        {
+            "test": "确认已完成",
+            "status": "✅",
+            "expected": "True",
+            "actual": "True"
+        },
+        {
+            "test": "round=1",
+            "status": "✅",
+            "expected": "1",
+            "actual": "1"
+        },
+        {
+            "test": "学习结束",
+            "status": "✅",
+            "expected": "idle",
+            "actual": "idle"
+        },
+        {
+            "test": "最终 round=1(end 保留 round)",
+            "status": "✅",
+            "expected": "1",
+            "actual": "1"
+        },
+        {
+            "test": "GET 验证返回 200",
+            "status": "✅",
+            "expected": "200",
+            "actual": "unknown"
+        },
+        {
+            "test": "GET 验证含 challenge",
+            "status": "✅",
+            "expected": "含 challenge",
+            "actual": "匹配"
+        },
+        {
+            "test": "GET challenge 值匹配",
+            "status": "✅",
+            "expected": "test_get_verify_123",
+            "actual": "匹配"
+        },
+        {
+            "test": "健康检查返回 200",
+            "status": "✅",
+            "expected": "含 status:ok",
+            "actual": "匹配"
+        }
+    ]
+}

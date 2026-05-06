@@ -1,0 +1,20 @@
+{
+  "plan_id": "standard",
+  "name": "标准",
+  "description": "日常主力：节奏+护眼+轻升级。适合日常学习默认模式。",
+  "policy_patch": {
+    "pomodoro_minutes": 25,
+    "break_minutes": 5,
+    "reminder_intensity": "medium",
+    "escalation": {
+      "no_ack_minutes": 5,
+      "second_notice_minutes": 10,
+      "max_stage": 2
+    },
+    "night": {
+      "enabled": true,
+      "silent_speaker": true,
+      "light_only": true
+    }
+  }
+}

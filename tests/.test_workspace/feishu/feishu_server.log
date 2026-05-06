@@ -1,0 +1,7 @@
+2026-05-06 15:21:14,858 [feishu] INFO 日志已重定向到文件: C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\feishu\feishu_server.log
+2026-05-06 15:21:14,858 [feishu] INFO FEISHU_DIR=C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\feishu
+2026-05-06 15:21:14,858 [feishu] INFO BASE_DIR=C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning
+2026-05-06 15:21:14,858 [feishu] INFO CONFIG_FILE=C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\feishu\config.json
+2026-05-06 15:21:15,226 [feishu] INFO 飞书应用验证(GET): challenge=test_get_verify_123
+2026-05-06 15:21:15,226 [feishu] INFO "GET /feishu/webhook?challenge=test_get_verify_123 HTTP/1.1" 200 -
+2026-05-06 15:21:15,226 [feishu] INFO "GET /feishu/health HTTP/1.1" 200 -

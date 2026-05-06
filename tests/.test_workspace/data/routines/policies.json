@@ -1,0 +1,15 @@
+{
+  "pomodoro_minutes": 25,
+  "break_minutes": 5,
+  "current_plan": "standard",
+  "escalation": {
+    "enabled": true,
+    "stage1": 300,
+    "stage2": 900
+  },
+  "night": {
+    "enabled": true,
+    "start": "22:30",
+    "end": "06:00"
+  }
+}

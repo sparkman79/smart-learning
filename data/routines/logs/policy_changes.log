@@ -1,0 +1,6 @@
+# 策略变更审计日志
+# 格式：YYYY-MM-DD HH:mm | member_id | 操作 | 详情
+# 示例：2026-05-05 14:30 | parent_1 | 切换计划 | standard
+2026-05-06T09:50:00+08:00 | parent_1 | 切换计划 → 轻量 | pomodoro:25→15, break:5→3
+2026-05-06T09:50:00+08:00 | parent_1 | 切换计划 → 轻量 | pomodoro:25→15, break:5→3
+2026-05-06T09:50:00+08:00 | parent_1 | 切换计划 → 轻量 | pomodoro:25→15, break:5→3

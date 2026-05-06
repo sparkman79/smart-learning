@@ -1,0 +1,16 @@
+{
+    "pomodoro_minutes": 15,
+    "break_minutes": 3,
+    "reminder_intensity": "low",
+    "escalation": {
+        "enabled": false
+    },
+    "night": {
+        "enabled": true,
+        "start": "22:00",
+        "end": "06:00",
+        "silent_speaker": true,
+        "light_only": true
+    },
+    "current_plan": "light"
+}

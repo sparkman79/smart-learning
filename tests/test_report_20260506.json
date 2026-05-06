@@ -1,0 +1,429 @@
+{
+    "timestamp": "2026-05-06 14:26:19",
+    "total": 70,
+    "pass": 70,
+    "fail": 0,
+    "rate": 100.0,
+    "results": [
+        {
+            "test": "inbox 文件存在",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "inbox 包含科目信息",
+            "status": "✅",
+            "expected": "包含数学",
+            "actual": "匹配结果"
+        },
+        {
+            "test": "inbox 包含时间",
+            "status": "✅",
+            "expected": "包含时间信息",
+            "actual": "匹配结果"
+        },
+        {
+            "test": "parsed 文件存在",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "孩子版存在",
+            "status": "✅",
+            "expected": "含孩子版标记",
+            "actual": "匹配结果"
+        },
+        {
+            "test": "家长版存在",
+            "status": "✅",
+            "expected": "含家长版标记",
+            "actual": "匹配结果"
+        },
+        {
+            "test": "检查点存在",
+            "status": "✅",
+            "expected": "含检查点",
+            "actual": "匹配结果"
+        },
+        {
+            "test": "mode=learning",
+            "status": "✅",
+            "expected": "learning",
+            "actual": "learning"
+        },
+        {
+            "test": "current_member_id=kid_1",
+            "status": "✅",
+            "expected": "kid_1",
+            "actual": "kid_1"
+        },
+        {
+            "test": "started_at 有值",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "2026-05-06T09:10:00+08:00"
+        },
+        {
+            "test": "ack_start=false",
+            "status": "✅",
+            "expected": "false",
+            "actual": "False"
+        },
+        {
+            "test": "ack_start=true",
+            "status": "✅",
+            "expected": "true",
+            "actual": "True"
+        },
+        {
+            "test": "ack_start_at 有值",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "2026-05-06T09:15:30+08:00"
+        },
+        {
+            "test": "ack_done=false",
+            "status": "✅",
+            "expected": "false",
+            "actual": "False"
+        },
+        {
+            "test": "escalation_stage=1",
+            "status": "✅",
+            "expected": "1",
+            "actual": "1"
+        },
+        {
+            "test": "last_nudge_at 已设置",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "2026-05-06T09:20:00+08:00"
+        },
+        {
+            "test": "escalation_stage=2",
+            "status": "✅",
+            "expected": "2",
+            "actual": "2"
+        },
+        {
+            "test": "ack_done=true",
+            "status": "✅",
+            "expected": "true",
+            "actual": "True"
+        },
+        {
+            "test": "ack_done_at 有值",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "2026-05-06T09:40:00+08:00"
+        },
+        {
+            "test": "round=2",
+            "status": "✅",
+            "expected": "2",
+            "actual": "2"
+        },
+        {
+            "test": "学习时长 30 分钟",
+            "status": "✅",
+            "expected": "30",
+            "actual": "30.0"
+        },
+        {
+            "test": "mode=idle",
+            "status": "✅",
+            "expected": "idle",
+            "actual": "idle"
+        },
+        {
+            "test": "session.round 重置",
+            "status": "✅",
+            "expected": "0",
+            "actual": "0"
+        },
+        {
+            "test": "trends.csv 含表头",
+            "status": "✅",
+            "expected": "含表头",
+            "actual": "日期,member_id,学习时长,番茄轮次,完成数,总数,完成度"
+        },
+        {
+            "test": "trends.csv 含数据",
+            "status": "✅",
+            "expected": "含数据行",
+            "actual": "2026-05-06,kid_1,30,2,4,4,100.0"
+        },
+        {
+            "test": "完成度=100",
+            "status": "✅",
+            "expected": "100.0",
+            "actual": "2026-05-06,kid_1,30,2,4,4,100.0"
+        },
+        {
+            "test": "plan=轻量",
+            "status": "✅",
+            "expected": "light",
+            "actual": "light"
+        },
+        {
+            "test": "pomodoro=15",
+            "status": "✅",
+            "expected": "15",
+            "actual": "15"
+        },
+        {
+            "test": "break=3",
+            "status": "✅",
+            "expected": "3",
+            "actual": "3"
+        },
+        {
+            "test": "escalation=关闭",
+            "status": "✅",
+            "expected": "false",
+            "actual": "False"
+        },
+        {
+            "test": "日志文件存在",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "日志含变更内容",
+            "status": "✅",
+            "expected": "含变更",
+            "actual": "匹配结果"
+        },
+        {
+            "test": "日志含时间戳",
+            "status": "✅",
+            "expected": "含时间戳",
+            "actual": "匹配结果"
+        },
+        {
+            "test": "family_id 存在",
+            "status": "✅",
+            "expected": "非空",
+            "actual": "FAMILY_001"
+        },
+        {
+            "test": "3 个成员",
+            "status": "✅",
+            "expected": "3",
+            "actual": "3"
+        },
+        {
+            "test": "admin 存在",
+            "status": "✅",
+            "expected": "有 admin",
+            "actual": "匹配"
+        },
+        {
+            "test": "parent 存在",
+            "status": "✅",
+            "expected": "有 parent",
+            "actual": "匹配"
+        },
+        {
+            "test": "kid 存在",
+            "status": "✅",
+            "expected": "有 kid",
+            "actual": "匹配"
+        },
+        {
+            "test": "parent 有 linked_children",
+            "status": "✅",
+            "expected": "有 children",
+            "actual": "匹配"
+        },
+        {
+            "test": "kid_1 角色=kid",
+            "status": "✅",
+            "expected": "kid",
+            "actual": "kid"
+        },
+        {
+            "test": "kid 无修改权限",
+            "status": "✅",
+            "expected": "拒绝修改",
+            "actual": "无权限"
+        },
+        {
+            "test": "模板 light 存在",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "模板 light 有 policy_patch",
+            "status": "✅",
+            "expected": "有 patch",
+            "actual": "有 patch"
+        },
+        {
+            "test": "模板 standard 存在",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "模板 standard 有 policy_patch",
+            "status": "✅",
+            "expected": "有 patch",
+            "actual": "有 patch"
+        },
+        {
+            "test": "模板 sprint 存在",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "模板 sprint 有 policy_patch",
+            "status": "✅",
+            "expected": "有 patch",
+            "actual": "有 patch"
+        },
+        {
+            "test": "模板 family_read 存在",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "模板 family_read 有 policy_patch",
+            "status": "✅",
+            "expected": "有 patch",
+            "actual": "有 patch"
+        },
+        {
+            "test": "Skill: daily-report",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (daily-report)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1108 字符"
+        },
+        {
+            "test": "Skill: homework-intake",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (homework-intake)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1488 字符"
+        },
+        {
+            "test": "Skill: member-registry",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (member-registry)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1613 字符"
+        },
+        {
+            "test": "Skill: plan-builder",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (plan-builder)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1386 字符"
+        },
+        {
+            "test": "Skill: study-ack",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (study-ack)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1245 字符"
+        },
+        {
+            "test": "Skill: study-escalation",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (study-escalation)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1940 字符"
+        },
+        {
+            "test": "Skill: study-mode",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (study-mode)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1874 字符"
+        },
+        {
+            "test": "Skill: weekly-report",
+            "status": "✅",
+            "expected": "true",
+            "actual": "true"
+        },
+        {
+            "test": "SKILL.md 非空 (weekly-report)",
+            "status": "✅",
+            "expected": ">100 字符",
+            "actual": "1268 字符"
+        },
+        {
+            "test": "总任务≥10",
+            "status": "✅",
+            "expected": "≥10",
+            "actual": "10"
+        },
+        {
+            "test": "study_escalation 存在",
+            "status": "✅",
+            "expected": "存在",
+            "actual": "匹配"
+        },
+        {
+            "test": "daily_learning_report 存在",
+            "status": "✅",
+            "expected": "存在",
+            "actual": "匹配"
+        },
+        {
+            "test": "escalation 每分钟",
+            "status": "✅",
+            "expected": "*/1 * * * *",
+            "actual": "*/1 * * * *"
+        },
+        {
+            "test": "escalation 已启用",
+            "status": "✅",
+            "expected": "true",
+            "actual": "True"
+        }
+    ]
+}

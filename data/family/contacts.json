@@ -1,0 +1,10 @@
+{
+  "admin_openids": ["openid_admin_1"],
+  "parents": [
+    {
+      "name": "家长A",
+      "openid": "openid_parent_1",
+      "linked_children": ["kid_1"]
+    }
+  ]
+}

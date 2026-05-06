@@ -1,0 +1,8 @@
+{
+  "app_id": "cli_a943861621615ccd",
+  "app_secret": "kd9Cx3ThkCCvuQF0DaBKMdaOOxoAIyQJ",
+  "verify_token": "werify_abc123",
+  "webhook_path": "/feishu/webhook",
+  "channel": "feishu",
+  "status": "ready"
+}

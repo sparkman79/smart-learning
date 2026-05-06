@@ -1,0 +1,20 @@
+{
+  "plan_id": "sprint",
+  "name": "冲刺",
+  "description": "效率优先：更强节奏+更快升级。适合考试前、任务集中时使用。",
+  "policy_patch": {
+    "pomodoro_minutes": 30,
+    "break_minutes": 5,
+    "reminder_intensity": "high",
+    "escalation": {
+      "no_ack_minutes": 3,
+      "second_notice_minutes": 6,
+      "max_stage": 2
+    },
+    "night": {
+      "enabled": true,
+      "silent_speaker": false,
+      "light_only": false
+    }
+  }
+}

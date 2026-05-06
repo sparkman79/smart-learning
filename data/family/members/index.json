@@ -1,0 +1,28 @@
+{
+  "family_id": "FAMILY_001",
+  "members": [
+    {
+      "openid": "openid_admin_1",
+      "member_id": "admin_1",
+      "role": "admin",
+      "display_name": "家长管理员",
+      "linked_children": ["kid_1", "kid_2"],
+      "created_at": "2026-05-05"
+    },
+    {
+      "openid": "openid_parent_1",
+      "member_id": "parent_1",
+      "role": "parent",
+      "display_name": "家长A",
+      "linked_children": ["kid_1"],
+      "created_at": "2026-05-05"
+    },
+    {
+      "openid": "openid_kid_1",
+      "member_id": "kid_1",
+      "role": "kid",
+      "display_name": "小明",
+      "created_at": "2026-05-05"
+    }
+  ]
+}

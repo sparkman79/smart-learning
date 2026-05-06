@@ -1,0 +1,8 @@
+{
+  "app_id": "cli_test_app_id",
+  "app_secret": "test_secret",
+  "verify_token": "werify_abc123",
+  "webhook_path": "/feishu/webhook",
+  "channel": "feishu",
+  "status": "ready"
+}

@@ -1,0 +1,17 @@
+{
+  "mode": "study",
+  "current_member_id": "kid_1",
+  "session": {
+    "started_at": "2026-05-05T22:00:00+08:00",
+    "ack_start": true,
+    "ack_start_at": "2026-05-05T22:00:30+08:00",
+    "ack_done": false,
+    "ack_done_at": null,
+    "pomodoro_minutes": 25,
+    "break_minutes": 5,
+    "round": 1,
+    "escalation_stage": 0,
+    "last_nudge_at": "2026-05-05T22:00:00+08:00",
+    "last_notify_at": "2026-05-05T22:00:00+08:00"
+  }
+}
