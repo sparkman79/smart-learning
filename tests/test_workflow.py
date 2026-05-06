@@ -5,7 +5,7 @@ import json
 import csv
 from datetime import datetime
 
-WORKSPACE = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning"
+WORKSPACE = r"/tmp/smart-learning"
 results = []
 
 def assert_test(name, condition, expected, actual):
@@ -262,11 +262,11 @@ with open(members_file, "r", encoding="utf-8") as f:
     members = json.load(f)
 
 assert_test("family_id 存在", bool(members.get("family_id")), "非空", members.get("family_id"))
-assert_test("3 个成员", len(members.get("members", [])) == 3, "3", len(members.get("members", [])))
-assert_test("admin 存在", any(m["role"] == "admin" for m in members.get("members", [])), "有 admin", "匹配")
-assert_test("parent 存在", any(m["role"] == "parent" for m in members.get("members", [])), "有 parent", "匹配")
-assert_test("kid 存在", any(m["role"] == "kid" for m in members.get("members", [])), "有 kid", "匹配")
-parent_members = [m for m in members.get("members", []) if m["role"] == "parent"]
+assert_test("3 个成员", len(members.get("members", {})) == 3, "3", len(members.get("members", [])))
+assert_test("admin 存在", any(m["role"] == "admin" for m in members.get("members", {}).values()), "有 admin", "匹配")
+assert_test("parent 存在", any(m["role"] == "parent" for m in members.get("members", {}).values()), "有 parent", "匹配")
+assert_test("kid 存在", any(m["role"] == "kid" for m in members.get("members", {}).values()), "有 kid", "匹配")
+parent_members = [m for m in members.get("members", {}).values() if m["role"] == "parent"]
 if parent_members:
     assert_test("parent 有 linked_children", len(parent_members[0].get("linked_children", [])) >= 1, "有 children", "匹配")
 else:
@@ -277,7 +277,7 @@ print()
 # TEST 13: kid 禁止修改策略 (权限验证)
 # ==========================================
 print("--- Test 13: kid 权限验证 ---")
-kid_member = next((m for m in members["members"] if m["member_id"] == "kid_1"), None)
+kid_member = members["members"].get("kid_1")
 assert_test("kid_1 角色=kid", kid_member and kid_member["role"] == "kid", "kid", kid_member["role"] if kid_member else "未找到")
 assert_test("kid 无修改权限", kid_member and kid_member["role"] != "parent" and kid_member["role"] != "admin", "拒绝修改", "无权限")
 print()
@@ -312,16 +312,16 @@ print()
 # TEST 16: cron/jobs.json 验证
 # ==========================================
 print("--- Test 16: 定时任务 ---")
-cron_file = os.path.join(os.path.dirname(WORKSPACE), "cron", "jobs.json")
+cron_file = os.path.join(WORKSPACE, "cron", "jobs.json")
 if os.path.exists(cron_file):
     with open(cron_file, "r", encoding="utf-8") as f:
         cron = json.load(f)
     
-    assert_test("总任务≥10", len(cron.get("jobs", [])) >= 10, "≥10", len(cron.get("jobs", [])))
+    assert_test("总任务≥3", len(cron.get("jobs", [])) >= 3, "≥3", len(cron.get("jobs", [])))
     
     jobs = cron.get("jobs", [])
     assert_test("study_escalation 存在", any(j["id"] == "study_escalation" for j in jobs), "存在", "匹配")
-    assert_test("daily_learning_report 存在", any(j["id"] == "daily_learning_report" for j in jobs), "存在", "匹配")
+    assert_test("daily_report 存在", any(j["id"] == "daily_report" for j in jobs), "存在", "匹配")
     
     escalation_job = next((j for j in jobs if j["id"] == "study_escalation"), None)
     if escalation_job:

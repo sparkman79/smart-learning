@@ -13,7 +13,7 @@ import hashlib
 import time
 import shutil
 
-BASE_DIR = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning"
+BASE_DIR = r"/tmp/smart-learning"
 REAL_FEISHU = os.path.join(BASE_DIR, "feishu")
 REAL_ADAPTER = os.path.join(REAL_FEISHU, "adapter.py")
 

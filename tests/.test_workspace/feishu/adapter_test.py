@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 飞书 Bot 适配器
-将飞书消息转换为 OpenClaw 内部格式，并路由到对应 Skill
+将飞书消息转换为系统内部格式，并路由到对应 Skill
 """
 
 import json
@@ -29,12 +29,12 @@ logger.addHandler(file_handler)
 logger.info(f'日志已重定向到文件: {log_file}')
 
 # 路径配置：__file__ 在 feishu/ 目录下，dirname 直接拿到 feishu/ 目录
-FEISHU_DIR = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\feishu"
-BASE_DIR = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning"
-CONFIG_FILE = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\feishu\config.json"
-STATE_DIR = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\data\routines"
-STATE_FILE = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\data\routines\state.json"
-MEMBER_FILE = r"C:\Users\Administrator\AppData\Roaming\winclaw\.openclaw\workspace\smart_learning\tests\.test_workspace\data\family\members\index.json"
+FEISHU_DIR = r"/tmp/smart-learning/tests/.test_workspace/feishu"
+BASE_DIR = r"/tmp/smart-learning"
+CONFIG_FILE = r"/tmp/smart-learning/tests/.test_workspace/feishu/config.json"
+STATE_DIR = r"/tmp/smart-learning/tests/.test_workspace/data/routines"
+STATE_FILE = r"/tmp/smart-learning/tests/.test_workspace/data/routines/state.json"
+MEMBER_FILE = r"/tmp/smart-learning/tests/.test_workspace/data/family/members/index.json"
 
 # 打印路径用于调试
 logger.info(f'FEISHU_DIR={FEISHU_DIR}')
@@ -485,7 +485,8 @@ def handle_study_end(member, args, config, chat_id):
 def handle_daily_report(member, args, config, chat_id):
     """处理日报查看"""
     report_dir = os.path.join(STATE_DIR.replace('routines', 'reports'), 'daily')
-    today = '2026-05-06'  # TODO: 动态获取
+    from datetime import datetime
+    today = datetime.now().strftime('%Y-%m-%d')
     report_file = os.path.join(report_dir, f'{today}_{member["member_id"]}_daily.md')
     
     if os.path.exists(report_file):

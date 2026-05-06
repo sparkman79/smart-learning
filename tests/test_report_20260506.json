@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-05-06 14:26:19",
+    "timestamp": "2026-05-06 22:06:27",
     "total": 70,
     "pass": 70,
     "fail": 0,
@@ -369,7 +369,7 @@
             "test": "SKILL.md 非空 (study-escalation)",
             "status": "✅",
             "expected": ">100 字符",
-            "actual": "1940 字符"
+            "actual": "1183 字符"
         },
         {
             "test": "Skill: study-mode",
@@ -381,7 +381,7 @@
             "test": "SKILL.md 非空 (study-mode)",
             "status": "✅",
             "expected": ">100 字符",
-            "actual": "1874 字符"
+            "actual": "1193 字符"
         },
         {
             "test": "Skill: weekly-report",
@@ -396,10 +396,10 @@
             "actual": "1268 字符"
         },
         {
-            "test": "总任务≥10",
+            "test": "总任务≥3",
             "status": "✅",
-            "expected": "≥10",
-            "actual": "10"
+            "expected": "≥3",
+            "actual": "3"
         },
         {
             "test": "study_escalation 存在",
@@ -408,7 +408,7 @@
             "actual": "匹配"
         },
         {
-            "test": "daily_learning_report 存在",
+            "test": "daily_report 存在",
             "status": "✅",
             "expected": "存在",
             "actual": "匹配"

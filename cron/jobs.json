@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "id": "study_escalation",
+      "name": "学习升级检查",
+      "schedule": "*/1 * * * *",
+      "skill": "study-escalation",
+      "enabled": true,
+      "description": "每分钟检查未确认/超时学习，阶段化推送提醒"
+    },
+    {
+      "id": "daily_report",
+      "name": "日报自动生成",
+      "schedule": "0 23 * * *",
+      "skill": "daily-report",
+      "enabled": true,
+      "description": "每晚 23:00 自动生成今日学习日报"
+    },
+    {
+      "id": "weekly_report",
+      "name": "周报自动生成",
+      "schedule": "0 20 * * 0",
+      "skill": "weekly-report",
+      "enabled": true,
+      "description": "每周日 20:00 自动生成本周学习周报"
+    }
+  ]
+}
